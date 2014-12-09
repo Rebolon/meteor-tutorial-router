@@ -9,3 +9,7 @@ iron:router
 sahina:flatui
 underscore
 
+
+http
+jparker:crypto-md5
+

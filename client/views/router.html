@@ -8,6 +8,10 @@
     {{> menu}}
 
     {{> yield}}
+
+    <footer>
+        {{> yield "footer"}}
+    </footer>
 </template>
 
 <template name="menu">
@@ -49,7 +53,7 @@
 <template name="waiton">
     <h2>WAITON</h2>
 
-    {{> cites}}
+    {{> marvel_characters}}
 </template>
 
 <template name="cites">
@@ -64,4 +68,19 @@
             {{/if}}
         </blockquote>
     {{/each}}
+</template>
+
+<template name="marvel_characters">
+  <div class="row">
+    {{#each getCharacters}}
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img data-src="{{getThumb 'portrait_small'}}" alt="{{name}}">
+        <div class="caption">
+          <h3>{{name}}</h3>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
 </template>

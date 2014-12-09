@@ -1,0 +1,18 @@
+{
+  "environment" : "development",
+  "production" : {
+    "marvel" : {
+      "private_key" : ""
+    }
+  },
+  "development" : {
+    "meetup" : {
+      "private_key" : ""
+    }
+  },
+  public: {
+    "marvel": {
+      "public_key" : ""
+    }
+  }
+}
