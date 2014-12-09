@@ -6,10 +6,18 @@ Template.marvel_characters.helpers({
     },
   
   getThumb: function(format) {
+    console.log('getThumb', arguments);
     var availableFormat = ["portrait_small", "portrait_medium", "portrait_xlarge", "portrait_fantastic", "portrait_uncanny", "portrait_incredible"],
         defaultFormat = _.first(availableFormat),
         selectedFormat = _.contains(availableFormat, format) ? format : defaultFormat,
-        imgSrc = this.thumbnail.path + "/" + ($format?$format:defaultFormat) +  "." + this.thumbnail.extension;
+        imgSrc;
+    
+    // @TODO finish it iqwth a real blank image
+    if (typeof this.thumbnail.path == undefined) {
+      return "blank.jpg";
+    }
+    
+    imgSrc = this.thumbnail.path + "/" + selectedFormat +  "." + this.thumbnail.extension;
     
     return imgSrc;
   }

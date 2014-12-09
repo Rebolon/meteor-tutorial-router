@@ -59,7 +59,6 @@ Meteor.publish('router-citations-for-waiton', function() {
   resHttp = HTTP.get(url);
 
   _.each(resHttp.data.data.results, function(item) {
-      console.log(item);
       Characters.insert(item);
   });
 
