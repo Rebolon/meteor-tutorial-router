@@ -3,6 +3,8 @@ Meteor.publish('router-citations', function() {
 });
 
 Meteor.publish('router-citations-for-waiton', function() {
+    console.log('publish', arguments);
+  
     var MarvelAPI = function (settings) {
       // check
       if (!_.isObject(settings)
@@ -53,8 +55,7 @@ Meteor.publish('router-citations-for-waiton', function() {
       apiKey = marvel.getPublicKey(),
       hash = marvel.getHash(),
       url = "http://gateway.marvel.com:80/v1/public/characters?ts=" + timestamp + "&apikey=" +  apiKey + "&hash=" + hash,
-      resHttp,
-      Characters = new Meteor.Collection("mly-marvel-characters", {connection: null});
+      resHttp;
 
   resHttp = HTTP.get(url);
 

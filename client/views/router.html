@@ -73,7 +73,7 @@
 <template name="marvel_characters">
   <div class="row">
     {{#each getCharacters}}
-    <div class="col-xs-2">
+    <div id="character_{{id}}" class="col-xs-2">
       <div class="thumbnail">
         <img src="{{getThumb 'portrait_medium'}}" alt="{{name}}">
         <div class="caption">
@@ -83,4 +83,16 @@
     </div>
     {{/each}}
   </div>
+</template>
+
+<template name="cites_footer">
+  <footer>
+    Thanks to Papillotes Revillon for their cites
+  </footer>
+</template>
+
+<template name="marvel_footer">
+  <footer>
+    Great thanks to Marvel API for data
+  </footer>
 </template>
