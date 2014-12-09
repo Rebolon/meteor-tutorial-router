@@ -1,7 +1,6 @@
 Template.marvel_characters.helpers({
     getCharacters: function() {
         var chars = Characters.find({});
-        console.log('getCharacters', chars.count());
         return chars;
     },
   
